@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import axios from '../../utils/axios';
-import Bluebird from 'bluebird';
 import {
   fetchSensors,
   fetchSensor,
@@ -41,9 +40,11 @@ export const DATASET_ACTIONS = {
       if (filter.categories && filter.categories.length === 1)
         filterUrlQuery += `category=${filter.categories[0]}`;
       else
-        filterUrlQuery += _.map(filter.categories, cat => {
-          return `category[]=${cat}`;
-        }).join('&');
+        filterUrlQuery += _
+          .map(filter.categories, cat => {
+            return `category[]=${cat}`;
+          })
+          .join('&');
 
       filterUrlQuery += '&';
 
@@ -51,9 +52,11 @@ export const DATASET_ACTIONS = {
       if (filter.filetypes && filter.filetypes.length === 1)
         filterUrlQuery += `filetype=${filter.filetypes[0]}`;
       else
-        filterUrlQuery += _.map(filter.filetypes, type => {
-          return `filetype[]=${type}`;
-        }).join('&');
+        filterUrlQuery += _
+          .map(filter.filetypes, type => {
+            return `filetype[]=${type}`;
+          })
+          .join('&');
 
       if (_filter) {
         dispatch({

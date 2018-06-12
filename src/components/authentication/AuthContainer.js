@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { Switch, Route } from 'react-router-dom';
 import Register from './RegisterScreen';
 import Login from './LoginScreen';
-import SettleMintLogo from '../../assets/logo.svg';
 import '../../styles/auth.css';
 import { Paper } from 'react-md';
 import Logo from '../../assets/logo-white.png';

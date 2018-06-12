@@ -10,7 +10,7 @@ import ToolbarSpacer from '../generic/ToolbarSpacer';
 import { logout } from '../../redux/authentication/reducer';
 import { WALLET_ACTIONS } from '../../redux/wallet/actions';
 import TitleCTAButton from '../generic/TitleCTAButton';
-import TransactionsTable from './TransactionsTable';
+// import TransactionsTable from './TransactionsTable';
 
 class WalletScreen extends Component {
   componentDidMount() {
@@ -86,7 +86,7 @@ class WalletScreen extends Component {
             <MobileAddress>Address: {shortAddress}</MobileAddress>
             <p>Email: {email}</p>
             <p>
-              <a href="#" onClick={() => this.props.logout()}>
+              <a href="#logout" onClick={() => this.props.logout()}>
                 Log out
               </a>
             </p>
@@ -118,4 +118,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(WalletScreen);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(WalletScreen);

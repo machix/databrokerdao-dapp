@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { withFormik } from 'formik';
 import { Button, CircularProgress } from 'react-md';
 import EnhancedTextField from '../generic/EnhancedTextField';
@@ -17,7 +16,7 @@ const PureRegisterForm = ({
     onSubmit={handleSubmit}
     style={{ minWidth: '300px', textAlign: 'left' }}
   >
-    <div style={{padding:"0 20%"}}>
+    <div style={{ padding: '0 20%' }}>
       <EnhancedTextField
         type="email"
         fieldname="email"
@@ -37,11 +36,18 @@ const PureRegisterForm = ({
         touched={touched.password}
       />
     </div>
-    <div style={{display:"flex", justifyContent:"flex-end", alignItems:"center", marginTop:"60px"}}>
-      {(isSubmitting) && (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+        marginTop: '60px'
+      }}
+    >
+      {isSubmitting && (
         <CircularProgress
           centered={false}
-          style={{margin:"0 24px 0 0" }}
+          style={{ margin: '0 24px 0 0' }}
           id="registration-in-progress"
         />
       )}
@@ -54,7 +60,7 @@ const PureRegisterForm = ({
       <Button
         type="submit"
         disabled={isSubmitting}
-        className={isSubmitting?"disabled-button":""}
+        className={isSubmitting ? 'disabled-button' : ''}
         flat
         primary
         swapTheming
@@ -82,7 +88,8 @@ const RegisterForm = withFormik({
     return errors;
   },
   // Submission handler
-  handleSubmit: (values, { props, setErrors }) => { //, setSubmitting
+  handleSubmit: (values, { props, setErrors }) => {
+    //, setSubmitting
     props.register(values, { props, setErrors }); //, setSubmitting
   }
 })(PureRegisterForm);

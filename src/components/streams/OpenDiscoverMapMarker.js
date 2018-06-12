@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Button } from 'react-md';
 import styled from 'styled-components';
-import { BigNumber } from 'bignumber.js';
 import { convertWeiToDtx } from '../../utils/transforms';
 
 import Icon from '../generic/Icon';

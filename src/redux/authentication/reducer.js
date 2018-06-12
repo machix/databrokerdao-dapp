@@ -1,6 +1,6 @@
 import Wallet from 'ethereumjs-wallet';
 import axios from '../../utils/axios';
-import { ecies } from '@settlemint/lib-crypto';
+import { ecies } from './ecies';
 import Notifications from 'react-notification-system-redux';
 
 // ------------------------------------

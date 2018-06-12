@@ -20,7 +20,7 @@ import Identicon from 'identicon.js';
 import { TRANSACTIONS_ACTIONS } from '../../redux/transactions/actions';
 
 class TransactionsTable extends Component {
-  componentWillMount() {
+  componentDidMount() {
     this.props.fetchTransactions();
     this.props.fetchTransactionTypes();
   }
@@ -188,7 +188,10 @@ const mapStateToProps = state => ({
   token: state.auth.token
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(TransactionsTable);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TransactionsTable);
 
 function cropAddressOrTx(value, beginAmount, endAmount) {
   var result = value;

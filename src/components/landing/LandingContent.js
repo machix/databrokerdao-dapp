@@ -51,7 +51,8 @@ class LandingContent extends Component {
         updatedState['PM25'] = !this.state['PM25'];
         break;
       }
-      case 'PM10': {
+      case 'PM10':
+      default: {
         updatedState.PM10 = !this.state.PM10;
         break;
       }
@@ -207,4 +208,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(null, mapDispatchToProps)(withRouter(LandingContent));
+export default connect(
+  null,
+  mapDispatchToProps
+)(withRouter(LandingContent));

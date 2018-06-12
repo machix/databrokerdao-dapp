@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { withFormik } from 'formik';
 import { Button, CircularProgress } from 'react-md';
 import EnhancedTextField from '../generic/EnhancedTextField';
@@ -35,7 +34,7 @@ const PureLoginForm = ({
       error={errors.password}
       touched={touched.password}
     />
-    <div style={{overflow:"hidden"}}>
+    <div style={{ overflow: 'hidden' }}>
       {isSubmitting && (
         <CircularProgress
           centered={false}
@@ -50,7 +49,7 @@ const PureLoginForm = ({
           flat
           primary
           swapTheming
-          style={{ marginTop: '30px', float:"right" }}
+          style={{ marginTop: '30px', float: 'right' }}
         >
           Login
         </Button>
